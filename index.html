@@ -112,13 +112,19 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;h
 .col{text-align:center;transform:translateY(40px);opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
 .cols.in .col{transform:none;opacity:1}
 .cols.in .col:nth-child(2){transition-delay:.1s}.cols.in .col:nth-child(3){transition-delay:.2s}.cols.in .col:nth-child(4){transition-delay:.3s}.cols.in .col:nth-child(5){transition-delay:.4s}
-.col .cap{height:16px;background:var(--gold);margin:0 -10px;position:relative}
+.col .cap{height:16px;background:linear-gradient(180deg,var(--gold-lt),var(--gold));margin:0 -10px;position:relative}
 .col .cap::after{content:"";position:absolute;left:8px;right:8px;top:16px;height:8px;background:var(--gold-dk)}
-.col .shaft{height:190px;margin:8px 10px 0;background:repeating-linear-gradient(90deg,#F5F1E8 0 9px,#DCD3BF 9px 12px);display:flex;align-items:center;justify-content:center}
-.col .shaft svg{width:34px;height:34px;color:var(--navy);background:#F5F1E8;padding:6px;border-radius:50%;box-sizing:content-box}
-.col .base{height:12px;background:var(--gold-dk);margin:0 -4px}
-.col .base+.base{height:10px;background:var(--gold);margin:0 -12px}
-.col h3{color:#fff;font-size:20px;padding:22px 0 0}
+.col .shaft{position:relative;height:340px;margin:8px 6px 0;overflow:hidden;background:var(--navy-deep)}
+.col .shaft img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s;filter:saturate(.9)}
+.col .shaft::before{content:"";position:absolute;inset:0;z-index:1;background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 22px);mix-blend-mode:overlay;pointer-events:none}
+.col .shaft::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(9,22,51,0) 45%,rgba(9,22,51,.88));transition:opacity .5s}
+.col .shaft .ico{position:absolute;left:50%;bottom:62px;transform:translateX(-50%);z-index:2;width:46px;height:46px;border-radius:50%;background:var(--gold);display:grid;place-items:center;transition:transform .5s}
+.col .shaft .ico svg{width:22px;height:22px;color:var(--navy-deep)}
+.col .shaft h3{position:absolute;left:0;right:0;bottom:18px;z-index:2;color:#fff;font-size:21px;text-align:center;padding:0 10px}
+.col:hover .shaft img{transform:scale(1.08);filter:saturate(1.1)}
+.col:hover .shaft .ico{transform:translateX(-50%) translateY(-6px)}
+.col .base{height:12px;background:var(--gold-dk);margin:0 -2px}
+.col .base+.base{height:10px;background:var(--gold);margin:0 -10px}
 .steps{height:42px;margin-top:30px;border-top:2px solid var(--gold);background:linear-gradient(var(--navy-soft) 0 33%,#16295A 33% 66%,var(--navy-deep) 66%)}
 
 /* about */
@@ -265,7 +271,7 @@ footer ul a:hover{color:var(--gold-lt)}
   .hero .wrap,.about .wrap,.svc,.band .wrap,.qbox{grid-template-columns:1fr}
   .hero-art{height:520px;max-width:560px;width:100%;margin:0 auto}
   .seal{right:0}
-  .cols{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto;padding-bottom:10px}
+  .cols{grid-template-columns:repeat(5,minmax(200px,1fr));overflow-x:auto;padding:0 10px 10px}
   .colonnade .head,.svc-head{flex-direction:column;align-items:flex-start}
   .about-art{max-width:560px}
   .ba{right:0}
@@ -384,11 +390,11 @@ footer ul a:hover{color:var(--gold-lt)}
       <p>Customized cleaning plans for commercial and residential clients across Calgary, built around your schedule.</p>
     </div>
     <div class="cols" id="cols">
-      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M11 21v-3h2v3"/></svg></div><div class="base"></div><div class="base"></div><h3>Offices</h3></div>
-      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 6v12M6 12h12"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></div><div class="base"></div><div class="base"></div><h3>Medical Facilities</h3></div>
-      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 12h2M13 12h2M9 16h2M13 16h2"/></svg></div><div class="base"></div><div class="base"></div><h3>Condominiums</h3></div>
-      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="8" height="14"/><rect x="11" y="3" width="10" height="18"/><path d="M14 7h1M17 7h1M14 11h1M17 11h1M14 15h1M17 15h1M6 11h2M6 15h2"/></svg></div><div class="base"></div><div class="base"></div><h3>Apartments</h3></div>
-      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11 12 3l9 8M5 9.5V21h14V9.5M10 21v-6h4v6"/></svg></div><div class="base"></div><div class="base"></div><h3>Homes</h3></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><img src="images/office-cleaning.jpg" alt="Offices cleaning in Calgary"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 3h16v18H4zM8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M11 21v-3h2v3"/></svg></span><h3>Offices</h3></div><div class="base"></div><div class="base"></div></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><img src="images/medical-clinic.jpg" alt="Medical Facilities cleaning in Calgary"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 7v10M7 12h10"/></svg></span><h3>Medical Facilities</h3></div><div class="base"></div><div class="base"></div></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><img src="images/commercial-lobby.jpg" alt="Condominiums cleaning in Calgary"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 12h2M13 12h2M9 16h2M13 16h2"/></svg></span><h3>Condominiums</h3></div><div class="base"></div><div class="base"></div></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><img src="images/apartment-kitchen.jpg" alt="Apartments cleaning in Calgary"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="8" height="14"/><rect x="11" y="3" width="10" height="18"/><path d="M14 7h1M17 7h1M14 11h1M17 11h1M14 15h1M17 15h1M6 11h2M6 15h2"/></svg></span><h3>Apartments</h3></div><div class="base"></div><div class="base"></div></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><img src="images/residential-dining.jpg" alt="Homes cleaning in Calgary"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 3l9 8M5 9.5V21h14V9.5M10 21v-6h4v6"/></svg></span><h3>Homes</h3></div><div class="base"></div><div class="base"></div></div>
     </div>
   </div>
   <div class="steps"></div>
