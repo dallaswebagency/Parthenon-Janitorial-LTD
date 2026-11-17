@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parthenon Janitorial LTD | Commercial &amp; Residential Cleaning in Calgary, AB</title>
+<meta name="description" content="Family-owned commercial janitorial and residential cleaning in Calgary since 2018. Offices, medical facilities, condominiums, apartments, homes, move-in/move-out, deep and carpet cleaning. Bonded and insured.">
+<meta name="theme-color" content="#0F2149">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2149; --navy-deep:#091633; --navy-soft:#1B2F63;
+  --gold:#C29844; --gold-lt:#E2C67E; --gold-dk:#9C7630;
+  --marble:#F5F1E8; --stone:#EAE3D4; --paper:#FBF9F4;
+  --ink:#18203A; --muted:#5C6378; --line:rgba(15,33,73,.14);
+  --display:'Marcellus',Georgia,serif; --accent:'Cormorant Garamond',Georgia,serif; --body:'Manrope',system-ui,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;color:var(--navy);letter-spacing:.005em}
+em.acc{font-family:var(--accent);font-style:italic;font-weight:600;color:var(--gold-dk)}
+.label{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dk)}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border-radius:2px;transition:.25s;cursor:pointer;border:0;font-family:var(--body)}
+.btn svg{width:16px;height:16px}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-lt)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-soft)}
+.btn-line{border:1px solid var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+
+/* utility bar */
+.util{background:var(--navy-deep);color:#C9CFDD;font-size:13px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;gap:20px}
+.util .l,.util .r{display:flex;gap:26px;align-items:center}
+.util a:hover{color:var(--gold-lt)}
+.util span,.util a{display:inline-flex;align-items:center;gap:8px}
+.util svg{width:14px;height:14px;color:var(--gold)}
+.util .soc{display:flex;gap:14px}
+
+/* header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(245,241,232,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo img{height:62px;width:auto}
+.menu{display:flex;gap:34px;font-weight:600;font-size:14.5px}
+.menu a{position:relative;padding:6px 0;color:var(--navy)}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:.3s}
+.menu a:hover::after{width:100%}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .btn{padding:13px 20px;font-size:13px}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--navy);margin:7px 8px}
+
+/* hero */
+.hero{position:relative;background:var(--marble);overflow:hidden;padding:72px 0 96px}
+.hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:44%;background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(15,33,73,.035) 22px 24px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(40px,4.6vw,64px);margin:22px 0 24px}
+.hero h1 em.acc{display:block;font-size:1.06em;line-height:1}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:540px}
+.hero .ctas{display:flex;gap:14px;margin:34px 0 46px;flex-wrap:wrap}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pillars div{padding:20px 18px 20px 0;display:flex;gap:12px;align-items:center;font-weight:700;font-size:14.5px;color:var(--navy)}
+.pillars div+div{padding-left:20px;border-left:1px solid var(--line)}
+.pillars svg{width:28px;height:28px;color:var(--gold);flex:none}
+.hero-art{position:relative;height:620px}
+.pediment{position:absolute;inset:0 0 40px 40px;clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%)}
+.pediment img{width:100%;height:100%;object-fit:cover}
+.pediment-line{position:absolute;inset:-14px -14px 26px 26px;clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%);background:var(--gold);opacity:.9}
+.pediment-line::after{content:"";position:absolute;inset:1.5px;clip-path:inherit;background:var(--marble)}
+.inset{position:absolute;left:0;bottom:0;width:250px;background:#fff;padding:10px 10px 14px;box-shadow:0 24px 50px -20px rgba(9,22,51,.45)}
+.inset img{width:100%;height:170px;object-fit:cover}
+.inset small{display:block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.plaque{position:absolute;right:-6px;bottom:90px;background:var(--navy);color:#fff;padding:18px 22px;text-align:center;border:1px solid var(--gold);outline:6px solid var(--navy);box-shadow:0 18px 40px -16px rgba(9,22,51,.6)}
+.plaque b{display:block;font-family:var(--display);font-weight:400;font-size:30px;color:var(--gold-lt);line-height:1}
+.plaque span{font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+
+/* colonnade */
+.colonnade{background:var(--navy);color:#fff;padding:84px 0 0;position:relative;overflow:hidden}
+.colonnade .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.colonnade h2{color:#fff;font-size:clamp(30px,3.4vw,46px);max-width:560px}
+.colonnade .head p{color:#B8C0D4;max-width:420px}
+.cols{display:grid;grid-template-columns:repeat(5,1fr);gap:28px;align-items:end}
+.col{text-align:center;transform:translateY(40px);opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.cols.in .col{transform:none;opacity:1}
+.cols.in .col:nth-child(2){transition-delay:.1s}.cols.in .col:nth-child(3){transition-delay:.2s}.cols.in .col:nth-child(4){transition-delay:.3s}.cols.in .col:nth-child(5){transition-delay:.4s}
+.col .cap{height:16px;background:var(--gold);margin:0 -10px;position:relative}
+.col .cap::after{content:"";position:absolute;left:8px;right:8px;top:16px;height:8px;background:var(--gold-dk)}
+.col .shaft{height:190px;margin:8px 10px 0;background:repeating-linear-gradient(90deg,#F5F1E8 0 9px,#DCD3BF 9px 12px);display:flex;align-items:center;justify-content:center}
+.col .shaft svg{width:34px;height:34px;color:var(--navy);background:#F5F1E8;padding:6px;border-radius:50%;box-sizing:content-box}
+.col .base{height:12px;background:var(--gold-dk);margin:0 -4px}
+.col .base+.base{height:10px;background:var(--gold);margin:0 -12px}
+.col h3{color:#fff;font-size:20px;padding:22px 0 0}
+.steps{height:42px;margin-top:30px;border-top:2px solid var(--gold);background:linear-gradient(var(--navy-soft) 0 33%,#16295A 33% 66%,var(--navy-deep) 66%)}
+
+/* about */
+.about{padding:120px 0;position:relative}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-art{position:relative;padding:0 0 70px 0}
+.about-art .main{position:relative}
+.about-art .main img{width:100%;height:520px;object-fit:cover}
+.about-art .main::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--gold);z-index:-1}
+.ba{position:absolute;right:-30px;bottom:0;background:var(--navy);padding:16px;width:330px;color:#fff;box-shadow:0 30px 60px -25px rgba(9,22,51,.6)}
+.ba .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ba figure{position:relative}
+.ba img{width:100%;aspect-ratio:1;object-fit:cover}
+.ba figcaption{position:absolute;left:6px;top:6px;background:var(--gold);color:var(--navy-deep);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px}
+.ba figure:first-child figcaption{background:#fff}
+.ba p{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-top:12px;color:var(--gold-lt);font-weight:700}
+.about-text{position:relative}
+.about-text .yr{position:absolute;right:-10px;top:-150px;font-family:var(--display);font-size:200px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(194,152,68,.22);z-index:-1;user-select:none}
+.about-text h2{font-size:clamp(34px,3.8vw,52px);margin:18px 0 22px}
+.about-text>p{color:var(--muted);font-size:17px;margin-bottom:30px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-bottom:38px}
+.checks li{list-style:none;padding:15px 0 15px 28px;border-bottom:1px solid var(--line);position:relative;font-weight:600;color:var(--navy);font-size:15px}
+.checks li::before{content:"";position:absolute;left:3px;top:22px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+
+/* services */
+.services{background:var(--stone);padding:120px 0}
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px}
+.svc-head h2{font-size:clamp(34px,3.8vw,52px);margin-top:16px}
+.svc-head p{max-width:400px;color:var(--muted)}
+.svc{display:grid;grid-template-columns:.86fr 1.14fr;gap:64px;align-items:start}
+.svc-view{position:sticky;top:120px}
+.svc-view .frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy)}
+.svc-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .6s,transform 1.2s}
+.svc-view img.on{opacity:1;transform:none}
+.svc-view .frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(226,198,126,.7);pointer-events:none}
+.svc-view .cap{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-weight:700;color:var(--navy)}
+.svc-view .cap b{font-family:var(--display);font-weight:400;color:var(--gold-dk);font-size:26px}
+.svc-list{border-top:1px solid rgba(15,33,73,.25)}
+.svc-row{display:grid;grid-template-columns:64px 1fr auto;gap:22px;padding:28px 6px;border-bottom:1px solid rgba(15,33,73,.25);align-items:start;cursor:pointer;transition:background .3s,padding .3s}
+.svc-row .num{font-family:var(--display);font-size:26px;color:var(--gold-dk);line-height:1.2}
+.svc-row h3{font-size:25px;margin-bottom:6px;transition:color .3s}
+.svc-row p{color:var(--muted);font-size:15px;max-width:520px}
+.svc-row .go{align-self:center;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);white-space:nowrap;opacity:.45;transition:.3s}
+.svc-row .go svg{width:16px;height:16px;transition:transform .3s}
+.svc-row .thumb{display:none}
+.svc-row.on,.svc-row:hover{background:var(--paper);padding-left:20px;padding-right:20px}
+.svc-row.on .go,.svc-row:hover .go{opacity:1;color:var(--gold-dk)}
+.svc-row.on .go svg{transform:translateX(4px)}
+
+/* guarantee band */
+.band{position:relative;color:#fff;padding:110px 0;overflow:hidden}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(9,22,51,.96) 0 45%,rgba(9,22,51,.7) 75%,rgba(9,22,51,.5));z-index:1}
+.band .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.band .label{color:var(--gold-lt)}
+.band h2{color:#fff;font-size:clamp(36px,4.4vw,62px);margin:18px 0 20px}
+.band h2 em.acc{color:var(--gold-lt)}
+.band p{color:#C7CEDF;font-size:17px;max-width:540px;margin-bottom:32px}
+.freq{border:1px solid rgba(226,198,126,.45);padding:12px 30px;background:rgba(9,22,51,.5)}
+.freq li{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-family:var(--display);font-size:22px}
+.freq li:last-child{border:0}
+.freq li span{font-family:var(--body);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt)}
+
+/* gallery */
+.gallery{padding:120px 0 110px;background:var(--marble);overflow:hidden}
+.gal-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.gal-head .label::after{content:"";width:28px;height:1px;background:currentColor}
+.gal-head h2{font-size:clamp(34px,3.8vw,52px);margin:16px 0 14px}
+.gal-head p{color:var(--muted)}
+.track{display:flex;gap:16px;width:max-content;animation:slide 70s linear infinite}
+.track.rev{animation-direction:reverse;margin-top:16px}
+.marquee:hover .track{animation-play-state:paused}
+.track img{height:260px;width:200px;flex:none;object-fit:cover;border:6px solid #fff;box-shadow:0 10px 26px -14px rgba(9,22,51,.4)}
+@keyframes slide{to{transform:translateX(-50%)}}
+.gal-foot{display:flex;justify-content:center;gap:14px;margin-top:50px;flex-wrap:wrap}
+
+/* quote */
+.quote{padding:120px 0;background:var(--paper)}
+.qbox{display:grid;grid-template-columns:.9fr 1.1fr;box-shadow:0 40px 80px -40px rgba(9,22,51,.35)}
+.q-info{background:var(--navy);color:#fff;padding:56px 50px;position:relative;overflow:hidden}
+.q-info::after{content:"";position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border:1px solid rgba(226,198,126,.25);transform:rotate(45deg)}
+.q-info .label{color:var(--gold-lt)}
+.q-info h2{color:#fff;font-size:clamp(32px,3.4vw,46px);margin:16px 0 18px}
+.q-info>p{color:#B8C0D4;margin-bottom:34px}
+.q-line{display:flex;gap:16px;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.12)}
+.q-line svg{width:22px;height:22px;color:var(--gold)}
+.q-line small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8F9AB6}
+.q-line b{font-size:18px;font-weight:600}
+.q-line a:hover b{color:var(--gold-lt)}
+.areas{margin-top:30px}
+.areas h4{font-family:var(--display);font-weight:400;font-size:20px;color:var(--gold-lt);margin-bottom:14px}
+.areas ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.areas li{list-style:none;font-size:14.5px;color:#D9DEEA;padding-left:16px;position:relative}
+.areas li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.q-form{background:#fff;padding:56px 50px}
+.q-form h3{font-size:30px;margin-bottom:6px}
+.q-form>p{color:var(--muted);margin-bottom:28px;font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.field label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.field input,.field select,.field textarea{font:inherit;font-size:15px;padding:14px 14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:2px;outline:none;transition:border .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{min-height:110px;resize:vertical}
+.consent{display:flex;gap:10px;font-size:13px;color:var(--muted);margin:4px 0 24px;align-items:flex-start}
+.consent input{margin-top:4px;accent-color:var(--navy)}
+.q-submit{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.guar{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:14px}
+.guar i{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-style:normal;font-family:var(--display);color:var(--gold-dk);font-size:13px}
+
+/* footer */
+footer{background:var(--navy-deep);color:#AEB7CC;font-size:14.5px}
+.meander{height:26px;background-color:var(--navy-deep);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='26' viewBox='0 0 52 26'%3E%3Cpath d='M0 24H22V4H6V16H14V10' fill='none' stroke='%23C29844' stroke-width='2.2'/%3E%3Cpath d='M26 2H48V22H32V10H40V16' fill='none' stroke='%23C29844' stroke-width='2.2'/%3E%3Cpath d='M22 24H52M0 2H26' fill='none' stroke='%23C29844' stroke-width='2.2'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center;opacity:.85}
+.f-top{display:grid;grid-template-columns:1.25fr .8fr 1fr 1fr;gap:50px;padding:80px 0 60px}
+.f-brand .plate{background:var(--marble);display:inline-block;padding:16px 22px;margin-bottom:22px}
+.f-brand .plate img{height:70px}
+.f-brand p{max-width:330px;margin-bottom:22px}
+.f-soc{display:flex;gap:10px}
+.f-soc a{width:40px;height:40px;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;transition:.25s}
+.f-soc a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+.f-soc svg{width:16px;height:16px}
+footer h4{font-family:var(--display);font-weight:400;color:#fff;font-size:20px;margin-bottom:20px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer ul a:hover{color:var(--gold-lt)}
+.f-cta{border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);padding:34px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.f-cta h3{color:#fff;font-size:clamp(24px,2.6vw,34px)}
+.f-bot{display:flex;justify-content:space-between;gap:20px;padding:26px 0 30px;font-size:13px;flex-wrap:wrap}
+.f-bot a{color:var(--gold-lt)}
+.f-bot a:hover{text-decoration:underline}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.callbar{display:none}
+
+@media (max-width:1100px){
+  .menu{gap:22px}
+  .nav-cta .btn-line{display:none}
+  .f-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:960px){
+  .util .l span.loc,.util .r span{display:none}
+  .menu{display:none;position:absolute;top:86px;left:0;right:0;background:var(--marble);flex-direction:column;padding:20px 28px 28px;gap:16px;border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .hero .wrap,.about .wrap,.svc,.band .wrap,.qbox{grid-template-columns:1fr}
+  .hero-art{height:500px;max-width:560px;width:100%;margin:0 auto}
+  .cols{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto;padding-bottom:10px}
+  .colonnade .head,.svc-head{flex-direction:column;align-items:flex-start}
+  .about-art{max-width:560px}
+  .ba{right:0}
+  .svc-view{display:none}
+  .svc-row .thumb{display:block;grid-column:1/-1;width:100%;height:200px;object-fit:cover;margin-top:6px}
+  .svc-row .go{grid-column:2;justify-self:start}
+  .svc-row{grid-template-columns:52px 1fr}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;bottom:0;left:0;right:0;z-index:60}
+  .callbar a{padding:16px;text-align:center;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .callbar a:first-child{background:var(--navy);color:#fff}
+  .callbar a:last-child{background:var(--gold);color:var(--navy-deep)}
+  footer{padding-bottom:52px}
+}
+@media (max-width:640px){
+  body{overflow-x:hidden}
+  .util .l a[href^="mailto"]{display:none}
+  .util .wrap{justify-content:center}
+  .wrap{padding:0 20px}
+  .util .r{display:none}
+  .nav-cta .btn{display:none}
+  .logo img{height:52px}
+  .hero{padding:48px 0 70px}
+  .pillars{grid-template-columns:1fr}
+  .pillars div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .hero-art{height:420px}
+  .inset{width:180px}.inset img{height:120px}
+  .plaque{bottom:60px}
+  .checks,.grid2{grid-template-columns:1fr}
+  .about-art .main img{height:400px}
+  .ba{position:relative;width:auto;margin-top:-40px;margin-left:30px}
+  .about-art{padding-bottom:0}
+  .about-text .yr{font-size:120px;top:-40px}
+  .q-info,.q-form{padding:40px 24px}
+  .track img{height:190px;width:146px}
+  .f-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="l">
+      <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Calgary, AB &amp; surrounding areas</span>
+      <a href="tel:4038370705"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(403) 837-0705</a>
+      <a href="mailto:parthenonjanitorialltd@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>parthenonjanitorialltd@gmail.com</a>
+    </div>
+    <div class="r">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Bonded &amp; Insured</span>
+      <div class="soc">
+        <a href="https://www.facebook.com/Parthenonjanitorial" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
+        <a href="https://www.instagram.com/parthenonjanitorialltd" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://share.google/7ZrJVIkq8dCAtXdrl" target="_blank" rel="noopener" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3zM12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22zM6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9L6.4 14zM12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.5L6.4 10C7.2 7.8 9.4 6 12 6z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Parthenon Janitorial home"><img src="images/parthenon-logo.png" alt="Parthenon Janitorial LTD logo"></a>
+    <nav class="menu" id="menu">
+      <a href="#top">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#testimonials">Gallery</a>
+      <a href="#quote">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#quote" class="btn btn-line">Book Now</a>
+      <a href="#quote" class="btn btn-gold">Get a Quote</a>
+      <button class="burger" aria-label="Open menu" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Experience a Cleaner Space Without the Hassle</span>
+      <h1>Professional Cleaning Services for <em class="acc">Homes &amp; Businesses</em></h1>
+      <p class="sub">Trusted commercial and residential cleaning services in Calgary, AB, delivering reliable, detail oriented cleaning solutions for offices, medical facilities, condominiums, apartments, and homes.</p>
+      <div class="ctas">
+        <a href="#quote" class="btn btn-navy">Get a Free Estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:4038370705" class="btn btn-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call Now</a>
+      </div>
+      <div class="pillars">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Reliable Service</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Professional Staff</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Flexible Scheduling</div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="pediment-line"></div>
+      <div class="pediment"><img src="images/kitchen-white.jpg" alt="Spotless white kitchen cleaned by Parthenon Janitorial"></div>
+      <div class="inset"><img src="images/commercial-lobby.jpg" alt="Clean commercial building lobby and elevator"><small>Offices &middot; Lobbies &middot; Common Areas</small></div>
+      <div class="plaque"><b>2018</b><span>Family-owned<br>Calgary, AB</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLONNADE -->
+<section class="colonnade">
+  <div class="wrap">
+    <div class="head">
+      <h2>Detail oriented cleaning for every kind of space</h2>
+      <p>Customized cleaning plans for commercial and residential clients across Calgary, built around your schedule.</p>
+    </div>
+    <div class="cols" id="cols">
+      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M11 21v-3h2v3"/></svg></div><div class="base"></div><div class="base"></div><h3>Offices</h3></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 6v12M6 12h12"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></div><div class="base"></div><div class="base"></div><h3>Medical Facilities</h3></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 12h2M13 12h2M9 16h2M13 16h2"/></svg></div><div class="base"></div><div class="base"></div><h3>Condominiums</h3></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="8" height="14"/><rect x="11" y="3" width="10" height="18"/><path d="M14 7h1M17 7h1M14 11h1M17 11h1M14 15h1M17 15h1M6 11h2M6 15h2"/></svg></div><div class="base"></div><div class="base"></div><h3>Apartments</h3></div>
+      <div class="col"><div class="cap"></div><div class="shaft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11 12 3l9 8M5 9.5V21h14V9.5M10 21v-6h4v6"/></svg></div><div class="base"></div><div class="base"></div><h3>Homes</h3></div>
+    </div>
+  </div>
+  <div class="steps"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-art reveal">
+      <div class="main"><img src="images/home-kitchen.jpg" alt="Freshly cleaned family home kitchen in Calgary"></div>
+      <div class="ba">
+        <div class="pair">
+          <figure><img src="images/oven-before.jpg" alt="Oven before deep cleaning"><figcaption>Before</figcaption></figure>
+          <figure><img src="images/oven-after.jpg" alt="Oven after deep cleaning"><figcaption>After</figcaption></figure>
+        </div>
+        <p>Real results from our team</p>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="yr">2018</div>
+      <span class="label">About Us</span>
+      <h2>Trusted Cleaning Services in <em class="acc">Calgary</em></h2>
+      <p>Parthenon Janitorial LTD is a family-owned company serving Calgary and surrounding areas since 2018. We are committed to personalized solutions, professional equipment, and consistent quality on every visit, whether it is a medical office, a condominium lobby or your home.</p>
+      <ul class="checks">
+        <li>Family-owned, local business</li>
+        <li>Serving Calgary since 2018</li>
+        <li>Customized cleaning plans</li>
+        <li>Flexible scheduling</li>
+        <li>Trained, detail-oriented staff</li>
+        <li>Bonded and insured</li>
+      </ul>
+      <a href="#quote" class="btn btn-navy">Get a Free Estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <div><span class="label">Our Services</span><h2>Commercial &amp; residential <em class="acc">cleaning services</em></h2></div>
+      <p>From daily janitorial upkeep to move-out and carpet cleaning, every service is tailored to your space and schedule.</p>
+    </div>
+    <div class="svc">
+      <div class="svc-view">
+        <div class="frame" id="svcFrame">
+          <img class="on" src="images/commercial-lobby.jpg" alt="Commercial janitorial cleaning">
+          <img src="images/medical-office.jpg" alt="Medical office cleaning">
+          <img src="images/residential-dining.jpg" alt="Residential house cleaning">
+          <img src="images/condo-bathroom.jpg" alt="Condominium cleaning">
+          <img src="images/commercial-building.jpg" alt="Commercial building cleaning">
+          <img src="images/apartment-kitchen.jpg" alt="Apartment cleaning services">
+          <img src="images/move-out-room.jpg" alt="Move-in and move-out cleaning">
+          <img src="images/deep-cleaning.jpg" alt="Deep cleaning services">
+          <img src="images/carpet-cleaning.jpg" alt="Carpet cleaning services">
+        </div>
+        <div class="cap"><span id="svcName">Commercial Janitorial Cleaning</span><b id="svcNum">I</b></div>
+      </div>
+      <div class="svc-list" id="svcList">
+        <a href="#quote" class="svc-row on"><span class="num">I</span><div><h3>Commercial Janitorial Cleaning</h3><p>Consistent upkeep for offices, commercial buildings, condos, apartments and professional spaces, with scheduling that adjusts to you.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/commercial-lobby.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">II</span><div><h3>Medical Office Cleaning</h3><p>Thorough cleaning for medical offices and healthcare settings that keeps them sanitary and polished.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/medical-office.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">III</span><div><h3>Residential House Cleaning</h3><p>Recurring or single-visit home cleaning, customized to each household.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/residential-dining.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">IV</span><div><h3>Condominium Cleaning</h3><p>Dependable care for shared condo areas such as lobbies, corridors and amenities.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/condo-bathroom.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">V</span><div><h3>Commercial Building Cleaning</h3><p>Cleaning for buildings of any size, supporting staff, tenants and guests.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/commercial-building.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">VI</span><div><h3>Apartment Cleaning Services</h3><p>Routine, deep and move-in/move-out cleaning for landlords, property managers, tenants and residents.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/apartment-kitchen.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">VII</span><div><h3>Move-In &amp; Move-Out Cleaning</h3><p>Intensive post-tenant cleaning of homes and rentals so they are ready for the next resident.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/move-out-room.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">VIII</span><div><h3>Deep Cleaning Services</h3><p>Removal of grime, dust and buildup from hard-to-reach areas for a full refresh.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/deep-cleaning.jpg" alt=""></a>
+        <a href="#quote" class="svc-row"><span class="num">IX</span><div><h3>Carpet Cleaning Services</h3><p>Professional equipment that lifts stains, dirt and odours and revives the look of your carpets.</p></div><span class="go">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><img class="thumb" src="images/carpet-cleaning.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE BAND -->
+<section class="band">
+  <img src="images/commercial-building.jpg" alt="">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">100% Happiness Guarantee</span>
+      <h2>A cleaner space, <em class="acc">without the hassle</em></h2>
+      <p>Tell us about your space and how often you need us. We build the plan around your schedule and stand behind every clean with our 100% Happiness Guarantee.</p>
+      <a href="#quote" class="btn btn-gold">Get a Free Estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <ul class="freq reveal">
+      <li>Weekly Cleaning <span>Recurring</span></li>
+      <li>Bi-Weekly Cleaning <span>Recurring</span></li>
+      <li>Monthly Cleaning <span>Recurring</span></li>
+      <li>Basic &amp; Deep Cleaning <span>One-time</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- GALLERY / TESTIMONIALS -->
+<section class="gallery" id="testimonials">
+  <div class="gal-head reveal">
+    <span class="label">Testimonials &amp; Gallery</span>
+    <h2>Real Experiences From Our <em class="acc">Happy Customers</em></h2>
+    <p>Lobbies, corridors, suites, kitchens and floors cleaned by our team across Calgary.</p>
+  </div>
+  <div class="marquee">
+    <div class="track" id="t1"></div>
+    <div class="track rev" id="t2"></div>
+  </div>
+  <div class="gal-foot">
+    <a href="https://www.instagram.com/parthenonjanitorialltd" target="_blank" rel="noopener" class="btn btn-line">Follow on Instagram</a>
+    <a href="https://share.google/7ZrJVIkq8dCAtXdrl" target="_blank" rel="noopener" class="btn btn-navy">Read our Google Reviews</a>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="quote">
+  <div class="wrap"><div class="qbox">
+    <div class="q-info">
+      <span class="label">Free Quote</span>
+      <h2>Get your free estimate today</h2>
+      <p>Share a few details about your space and our team will get back to you with a cleaning plan and estimate.</p>
+      <a class="q-line" href="tel:4038370705"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><div><small>Call us</small><b>(403) 837-0705</b></div></a>
+      <a class="q-line" href="mailto:parthenonjanitorialltd@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><div><small>Email us</small><b>parthenonjanitorialltd@gmail.com</b></div></a>
+      <div class="areas">
+        <h4>Service Areas</h4>
+        <ul>
+          <li>Calgary</li><li>Airdrie</li><li>Chestermere</li><li>Cochrane</li><li>Okotoks</li><li>High River</li><li>Strathmore</li><li>Balzac</li><li>Rocky View County</li><li>Foothills County</li>
+        </ul>
+      </div>
+    </div>
+    <form class="q-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you, we will be in touch';">
+      <h3>Request a Quote</h3>
+      <p>All fields marked * are required.</p>
+      <div class="grid2">
+        <div class="field"><label for="n">Name *</label><input id="n" required placeholder="Your full name"></div>
+        <div class="field"><label for="e">Email *</label><input id="e" type="email" required placeholder="you@email.com"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="p">Phone *</label><input id="p" type="tel" required placeholder="(403) 000-0000"></div>
+        <div class="field"><label for="s">Service Type *</label>
+          <select id="s" required>
+            <option value="">Select a service</option>
+            <option>Commercial Janitorial Cleaning</option><option>Office Cleaning</option><option>Medical Office Cleaning</option><option>Condominium Cleaning</option><option>Apartment Building Cleaning</option><option>Residential House Cleaning</option><option>Move-In Cleaning</option><option>Move-Out Cleaning</option><option>Deep Cleaning</option><option>Basic Cleaning</option><option>Weekly Cleaning Services</option><option>Bi-Weekly Cleaning Services</option><option>Monthly Cleaning Services</option><option>Carpet Cleaning</option><option>Commercial Building Cleaning</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="b">Bedrooms</label><input id="b" type="number" min="0" placeholder="e.g. 3"></div>
+        <div class="field"><label for="f">Square Footage</label><input id="f" type="number" min="0" placeholder="e.g. 1800"></div>
+      </div>
+      <div class="field"><label for="c">Comments</label><textarea id="c" placeholder="Tell us about your space, preferred schedule or anything we should know"></textarea></div>
+      <label class="consent"><input type="checkbox" required> I consent to Parthenon Janitorial LTD storing my submitted information so they can respond to my enquiry.</label>
+      <div class="q-submit">
+        <button class="btn btn-navy" type="submit">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="guar"><i>100%</i>Happiness Guarantee</div>
+      </div>
+    </form>
+  </div></div>
+</section>
+</main>
+
+<footer>
+  <div class="meander"></div>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <div class="plate"><img src="images/parthenon-logo.png" alt="Parthenon Janitorial LTD"></div>
+        <p>Family-owned commercial and residential cleaning serving Calgary and surrounding areas since 2018. Bonded and insured.</p>
+        <div class="f-soc">
+          <a href="https://www.facebook.com/Parthenonjanitorial" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="https://www.instagram.com/parthenonjanitorialltd" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://share.google/7ZrJVIkq8dCAtXdrl" target="_blank" rel="noopener" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3zM12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22zM6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9L6.4 14zM12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.5L6.4 10C7.2 7.8 9.4 6 12 6z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul><li><a href="#top">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#testimonials">Gallery</a></li><li><a href="#quote">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Commercial Janitorial</a></li><li><a href="#services">Medical Office Cleaning</a></li><li><a href="#services">Residential House Cleaning</a></li><li><a href="#services">Condominium &amp; Apartment</a></li><li><a href="#services">Move-In &amp; Move-Out</a></li><li><a href="#services">Deep &amp; Carpet Cleaning</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:4038370705">(403) 837-0705</a></li><li><a href="mailto:parthenonjanitorialltd@gmail.com">parthenonjanitorialltd@gmail.com</a></li><li>Calgary, Airdrie, Chestermere, Cochrane, Okotoks, High River, Strathmore, Balzac, Rocky View County &amp; Foothills County, AB</li></ul>
+      </div>
+    </div>
+    <div class="f-cta">
+      <h3>Get your free estimate today</h3>
+      <a href="#quote" class="btn btn-gold">Get a Free Quote</a>
+    </div>
+    <div class="f-bot">
+      <span>&copy; 2026 Parthenon Janitorial LTD. All Rights Reserved.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar"><a href="tel:4038370705">Call Now</a><a href="#quote">Free Quote</a></div>
+
+<script>
+// gallery marquee
+const g=[...Array(19)].map((_,i)=>`images/gallery/work-${String(i+1).padStart(2,'0')}.jpg`);
+const a=g.slice(0,10),b=g.slice(9);
+const fill=(id,list)=>{document.getElementById(id).innerHTML=[...list,...list].map(s=>`<img src="${s}" alt="Cleaning work by Parthenon Janitorial">`).join('')};
+fill('t1',a);fill('t2',b);
+
+// services hover
+const rows=[...document.querySelectorAll('.svc-row')],imgs=[...document.querySelectorAll('#svcFrame img')];
+rows.forEach((r,i)=>r.addEventListener('mouseenter',()=>{
+  rows.forEach(x=>x.classList.remove('on'));r.classList.add('on');
+  imgs.forEach(x=>x.classList.remove('on'));imgs[i].classList.add('on');
+  document.getElementById('svcName').textContent=r.querySelector('h3').textContent;
+  document.getElementById('svcNum').textContent=r.querySelector('.num').textContent;
+}));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal,#cols').forEach(el=>io.observe(el));
+document.querySelectorAll('#menu a').forEach(l=>l.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
